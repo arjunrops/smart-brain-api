@@ -21,27 +21,27 @@ const db = knex({
 
 const app = express();
 
-// const database = {
-// users: [
-// {
-// id: '123',
-// name: 'Arjun',
-// email: 'arjun@gmail.com',
-// password: 'cookies',
-// entries: 0,
-// joined: new Date()
-// },
-// {
-// id: '124',
-// name: 'Ajax',
-// email: 'ajax@gmail.com',
-// password: 'johan',
-// entries: 0,
-// joined: new Date()
-// },
-// ]
-// }
-// 
+const database = {
+    users: [
+        {
+            id: '123',
+            name: 'Arjun',
+            email: 'arjun@gmail.com',
+            password: 'cookies',
+            entries: 0,
+            joined: new Date()
+        },
+        {
+            id: '124',
+            name: 'Ajax',
+            email: 'ajax@gmail.com',
+            password: 'johan',
+            entries: 0,
+            joined: new Date()
+        },
+    ]
+}
+
 app.use(bodyParser.json());
 app.use(cors())
 
