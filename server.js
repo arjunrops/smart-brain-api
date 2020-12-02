@@ -9,7 +9,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image')
 
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3000;
 
 const db = knex({
     client: 'pg',
@@ -23,32 +23,32 @@ const db = knex({
 
 const app = express();
 
-const database = {
-    users: [
-        {
-            id: '123',
-            name: 'Arjun',
-            email: 'arjun@gmail.com',
-            password: 'cookies',
-            entries: 0,
-            joined: new Date()
-        },
-        {
-            id: '124',
-            name: 'Ajax',
-            email: 'ajax@gmail.com',
-            password: 'johan',
-            entries: 0,
-            joined: new Date()
-        },
-    ]
-}
+// const database = {
+// users: [
+// {
+// id: '123',
+// name: 'Arjun',
+// email: 'arjun@gmail.com',
+// password: 'cookies',
+// entries: 0,
+// joined: new Date()
+// },
+// {
+// id: '124',
+// name: 'Ajax',
+// email: 'ajax@gmail.com',
+// password: 'johan',
+// entries: 0,
+// joined: new Date()
+// },
+// ]
+// }
 
 app.use(bodyParser.json());
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send('It is working!');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
